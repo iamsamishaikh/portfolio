@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio-website</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo" alt="">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p><span>Frontend</span> Web Developer</p>
+            <h1>Hi, I am <span>Mohammad</span> <br>Samiullah from India</h1>
+        </div>
+    </div>
+</div>
+
+<!-- About -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user.png" alt="">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim et ex voluptates rem. Eveniet quaerat maiores quasi perferendis, ullam repellendus magnam, reprehenderit, eligendi fugit ratione non. Molestiae modi assumenda doloremque et impedit ab non! Qui nesciunt amet veniam est dolor.</p>
+
+                <div class="tab-title">
+                    <p class="tab-links active-link" onclick="opentab(event, 'Skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab(event, 'Experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab(event, 'Education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="Skills">
+                    <ul>
+                        <li><span>UI/UX</span> <br> Designing Web/App Interfaces</li>
+                        <li><span>Web Development</span> <br> web app development</li>
+                        <li><span>App Development</span> <br> Building Android apps</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Education">
+                    <ul>
+                        <li><span><b>B.Tech</b></span> <br>Computer Science Engineering From Jaipur (RAJASTHAN)</li>
+                        <li><span><b>12th</b></span> <br> BSEB Patna with 72 % </li>
+                        <li><span><b>10th</b></span> <br> BSEB Patna with 80.2 % </li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Experience">
+                    <ul>
+                        <li><span>2022 - Current</span> <br> Intern at Infosys</li>
+                        <li><span>Aug 2021 - November 2021</span> <br> Web development Trainee at Maclab Pvt. Ltd.</li>
+                        <li><span>October 2020 - March 2021</span> <br> Assistant High School Teacher at Delhi Public School, Patna (Bihar)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   
+<script>
+    var tab_links = document.getElementsByClassName("tab-links");
+    var tab_contents = document.getElementsByClassName("tab-contents");
+
+    function opentab(event, tabname) {
+        for (tab_link of tab_links) {
+            tab_link.classList.remove("active-link");
+        }
+        for (tab_content of tab_contents) {
+            tab_content.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+</body>
+</html>
